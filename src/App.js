@@ -1,25 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useRef } from 'react';
+import ReactToPrint from 'react-to-print';
 
-function App() {
+import PageSingle from './components/PageSingle';
+import Footer from './components/Footer';
+import ButtonSidebar from './components/ButtonSidebar';
+
+import './App.css'
+
+export default function App() {
+
+  const componentRef = useRef();
+
+  function handleClear() {
+
+  }
+
+  function handlePrint() {
+
+  }
+
+  function handleSwap() {
+
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="content">
+        <PageSingle />
+        <Footer />
+      </div>
+      <div className="sidebar">
+        <ButtonSidebar name="clear" onClick={handleClear}/>
+        <ButtonSidebar name='print' onClick={handlePrint}/>
+        <ButtonSidebar name='swap' onClick={handleSwap}/>
+      </div>
     </div>
   );
 }
 
-export default App;
+
+
+// <ReactToPrint
+// trigger={() => <button>Print this out!</button>}
+// content={() => componentRef.current}
+// size="A4"
+// />
