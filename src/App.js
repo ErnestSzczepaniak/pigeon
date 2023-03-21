@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useRef } from 'react';
-import ReactToPrint from 'react-to-print';
+// import ReactToPrint from 'react-to-print';
 
 import PageSingle from './components/PageSingle';
 import Footer from './components/Footer';
@@ -10,7 +10,7 @@ import './App.css'
 
 export default function App() {
 
-  const componentRef = useRef();
+  // const componentRef = useRef();
 
   function handleClear() {
 
