@@ -1,5 +1,4 @@
 import './App.css';
-import React, { useRef } from 'react';
 // import ReactToPrint from 'react-to-print';
 
 import PageSingle from './components/PageSingle';
