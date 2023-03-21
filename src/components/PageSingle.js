@@ -5,7 +5,7 @@ export default function PageSingle() {
 
     return (
         <div className="page-single">
-
+            asd
         </div>
     )
 }

@@ -1,21 +1,18 @@
 import './App.css';
-// import ReactToPrint from 'react-to-print';
+import { useRef } from 'react';
+
+import ReactToPrint from 'react-to-print';
 
 import PageSingle from './components/PageSingle';
-import Footer from './components/Footer';
 import ButtonSidebar from './components/ButtonSidebar';
 
 import './App.css'
 
 export default function App() {
 
-  // const componentRef = useRef();
+  const pageReference = useRef();
 
   function handleClear() {
-
-  }
-
-  function handlePrint() {
 
   }
 
@@ -27,22 +24,27 @@ export default function App() {
   return (
     <div className="app">
       <div className="content">
-        <PageSingle />
-        <Footer />
+        <div className="header">Generator raportów</div>
+        <div className="page" ref={pageReference}>
+          <PageSingle />
+        </div>
+        <div className="footer">
+          Ernest Szczepaniak @ CODWAY 2023. All rights reserved. 
+        </div>
       </div>
       <div className="sidebar">
-        <ButtonSidebar name="clear" onClick={handleClear}/>
-        <ButtonSidebar name='print' onClick={handlePrint}/>
-        <ButtonSidebar name='swap' onClick={handleSwap}/>
+          <ButtonSidebar name="clear" onClick={handleClear}/>
+          <ReactToPrint
+            trigger={() => <ButtonSidebar name='print'/>}
+            content={() => pageReference.current}
+            size="A4"
+          />
+          <ButtonSidebar name='swap' onClick={handleSwap}/>
       </div>
+
     </div>
   );
 }
 
 
 
-// <ReactToPrint
-// trigger={() => <button>Print this out!</button>}
-// content={() => componentRef.current}
-// size="A4"
-// />
