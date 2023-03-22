@@ -1,0 +1,18 @@
+.button-choose {
+    width: 60%;
+    height: 96px;
+    border-radius: 8px;
+    background-color: #13705a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-choose:hover {
+    background-color: #0f5a4a;
+    cursor: pointer;
+}
